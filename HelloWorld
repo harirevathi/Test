@@ -2,15 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('CHeck_out') {
-            steps {
-                checkout changelog: false, poll: false, scm: scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'Github_credentials', url: 'https://github.com/MOHANRAJ-V/Sample.git']])
-            }
-        }
-        stage(Install_terraform) {
+        stage(Hello World) {
             steps {
                 script {
-                       sudo apt-get install terraform 
+                     echo "hello buddy !!!!" 
                       
                 }
             }
